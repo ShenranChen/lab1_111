@@ -67,7 +67,7 @@ int main(int argc, char *argv[])
 
 				//if child exit 1 the main program also exit 1
 				if (WEXITSTATUS(status) == 1) {
-					fprintf(stderr, "here1!\n");
+					fprintf(stderr, "child's error\n");
 					return 1;
 				}
 
@@ -76,7 +76,6 @@ int main(int argc, char *argv[])
 				if( i > 0){
 					close(pipe_fd[i-1][0]); //close the previous read pipe
 				}
-
 			} 
 			else {
 				fprintf(stderr, "Error: fork\n");
